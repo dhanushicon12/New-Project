@@ -1,93 +1,43 @@
-# 🧾 Django Web Application
+# 🎓 Predictive Analytics for Student Performance in Online Courses
 
 ## 📌 Project Overview
-This project is a Django-based web application developed to manage structured data efficiently with a secure backend and dynamic frontend. It follows Django’s MVT (Model-View-Template) architecture to ensure scalability and maintainability.
+This project is a Django-based web application integrated with Machine Learning to predict student performance in online courses. It analyzes factors such as attendance, marks, and activity data to generate predictions and insights.
+
+The system helps educators identify at-risk students and improve learning outcomes through data-driven decisions.
 
 ---
 
 ## 🎯 Objectives
-- Build a scalable web application using Django
-- Implement CRUD operations
-- Ensure secure authentication system
-- Provide responsive UI
+- Predict student performance using machine learning algorithms
+- Develop a web interface for easy data input and result visualization
+- Analyze academic data to provide meaningful insights
+- Support better decision-making in online education systems
 
 ---
 
 ## 🚀 Features
-- User Authentication (Login/Logout)
-- Admin Panel
-- CRUD Operations
-- Dynamic Templates
-- SQLite Database Integration
+- 🔐 User Authentication (Login/Logout)
+- 📊 Student Performance Prediction System
+- 🧠 Machine Learning Model Integration
+- 🛠️ Admin Panel for data management
+- 🔄 CRUD Operations (Create, Read, Update, Delete)
+- 📈 Dynamic result display using Django templates
 
 ---
 
 ## 🧠 Core Logic & Algorithms
 
-### Authentication Flow
-Input → Validate → Authenticate → Session Create → Dashboard
-
-### CRUD Operations
-- Create: Save data using `.save()`
-- Read: Fetch using ORM `Model.objects.all()`
-- Update: Modify and save object
-- Delete: Remove using `.delete()`
-
-### Request Lifecycle
-User → URL → View → Model → Template → Response
-
----
-
-## 🏗️ Architecture
-Frontend → Templates → Views → Models → Database
+### 1️⃣ Machine Learning Model
+- Algorithms Used:
+  - Random Forest
+  - Decision Tree
+- Input Features:
+  - Attendance
+  - Marks
+  - Activity Level
+- Output:
+  - Predicted Performance (Good / Average / Poor)
 
 ---
 
-## 🛠️ Tech Stack
-- Python, Django
-- HTML, CSS, JavaScript
-- SQLite3
-
----
-
-## 📂 Project Structure
-project/
-│── manage.py
-│── db.sqlite3
-├── admins/
-├── project/
-
----
-
-## ⚙️ Setup Instructions
-1. git clone <repo>
-2. cd project
-3. python -m venv env
-4. env\Scripts\activate
-5. pip install django
-6. python manage.py migrate
-7. python manage.py runserver
-
----
-
-## 🔐 Security
-- CSRF Protection
-- Password Hashing
-- Session Authentication
-
----
-
-## 📊 Database
-SQLite (default)
-
----
-
-## 📌 Future Improvements
-- REST API
-- React Frontend
-- Deployment
-
----
-
-## 👨‍💻 Author
-Dhanush Anumalasetty
+### 2️⃣ Prediction Workflow
