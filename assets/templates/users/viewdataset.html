@@ -1,0 +1,77 @@
+{% extends 'users/userbase.html' %}
+
+{% block contents %}
+<!-- Include DataTables CSS and JS -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('table').DataTable({
+            "pageLength": 50
+        });
+    });
+</script>
+
+<style>
+    /* Custom styles for DataTables to match the base template */
+    .dataTable {
+        background-color: rgba(255, 255, 255, 0.95);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    .dataTable thead {
+        background-color: #1e3a8a;
+        color: white;
+    }
+    .dataTable tbody tr:nth-child(even) {
+        background-color: rgba(243, 244, 246, 0.8);
+    }
+    .dataTable tbody tr:nth-child(odd) {
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+    .dataTable tbody tr:hover {
+        background-color: rgba(209, 213, 219, 0.8);
+    }
+    .dataTables_wrapper .dataTables_paginate .paginate_button {
+        color: #1e3a8a !important;
+    }
+    .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+        background: #3b82f6 !important;
+        color: white !important;
+        border: none;
+    }
+    .dataTables_wrapper .dataTables_filter input {
+        border: 1px solid #d1d5db;
+        border-radius: 4px;
+        padding: 4px;
+    }
+    .dataTables_wrapper .dataTables_length select {
+        border: 1px solid #d1d5db;
+        border-radius: 4px;
+        padding: 4px;
+    }
+</style>
+
+<!-- Section Header -->
+<section class="py-12">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 animate-fade-in">Dataset View</h2>
+        <p class="text-lg text-gray-200 max-w-2xl mx-auto">
+            Explore the climate dataset below, displaying 50 entries per page for detailed analysis.
+        </p>
+    </div>
+</section>
+
+<!-- Dataset Table -->
+<section class="py-8">
+    <div class="container mx-auto px-4">
+        <div class="bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg p-6 rounded-xl shadow-lg">
+            <div class="overflow-x-auto">
+                {{ data|safe }}
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

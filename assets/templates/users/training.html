@@ -1,0 +1,63 @@
+{% extends 'users/userbase.html' %}
+{% load static %}
+
+{% block contents %}
+<div class="container mx-auto px-4" style="margin-top: 200px;">
+
+    <h1 class="text-3xl font-bold mb-8 text-white text-center">
+        Model Training Results
+    </h1>
+
+
+        <div class="mb-10 bg-white bg-opacity-10 rounded-lg p-6 shadow-lg">
+
+            <!-- Model Name -->
+            <h2 class="text-2xl font-semibold mb-4 text-white text-center">
+                {{ model_name }}
+            </h2>
+
+            <!-- Metrics Table -->
+            <table class="min-w-full bg-white rounded-lg overflow-hidden mb-6">
+                <thead class="bg-gray-800">
+                    <tr>
+                        <th class="py-2 px-4 text-left text-white">Metric</th>
+                        <th class="py-2 px-4 text-left text-white">Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="py-2 px-4 text-black border-b">Accuracy</td>
+                        <td class="py-2 px-4 text-black border-b">
+                            {{ accuracy }}
+                        </td>
+                    </tr>
+                   <!-- <tr>
+                        <td class="py-2 px-4 text-black border-b">F1 Score</td>
+                        <td class="py-2 px-4 text-black border-b">
+                            {{ f1_score }}
+                        </td>
+                    </tr>-->
+                </tbody>
+            </table>
+
+            <!-- Confusion Matrix -->
+            <h3 class="text-lg font-semibold mb-2 text-white">
+                Confusion Matrix
+            </h3>
+            <pre class="bg-gray-100 p-4 rounded text-black overflow-x-auto mb-6">
+{{ confusion_matrix }}
+            </pre>
+
+            <!-- Classification Report -->
+            <h3 class="text-lg font-semibold mb-2 text-white">
+                Classification Report
+            </h3>
+            <pre class="bg-gray-100 p-4 rounded text-black overflow-x-auto">
+{{ classification_report }}
+            </pre>
+
+        </div>
+     
+
+</div>
+{% endblock %}

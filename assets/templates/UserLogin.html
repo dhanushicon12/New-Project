@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contents %}
+
+<!-- ================= USER LOGIN SECTION ================= -->
+<section class="hero-overlay py-24 min-h-[calc(100vh-200px)] flex items-center">
+
+    <div class="container mx-auto px-4">
+        <div class="max-w-md mx-auto text-center">
+
+            <!-- Title -->
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 animate-fade-in-up">
+                User Login
+            </h2>
+
+            <!-- Login Card -->
+            <form action="{% url 'UserLoginCheck' %}" method="POST"
+                  class="bg-black/40 backdrop-blur-xl
+                         border border-white/20 p-8 rounded-2xl
+                         shadow-2xl animate-fade-in-up"
+                  style="animation-delay: 0.2s;">
+
+                {% csrf_token %}
+
+                <!-- Inputs -->
+                <div class="flex flex-col space-y-6">
+
+                    <!-- Login ID -->
+                    <input type="text"
+                           name="loginid"
+                           required
+                           placeholder="Enter Login ID"
+                           class="bg-black/60 border border-white/20
+                                  text-white rounded-lg p-3
+                                  focus:outline-none focus:ring-2
+                                  focus:ring-amber-500 transition">
+
+                    <!-- Password -->
+                    <input type="password"
+                           name="pswd"
+                           required
+                           placeholder="Enter Password"
+                           class="bg-black/60 border border-white/20
+                                  text-white rounded-lg p-3
+                                  focus:outline-none focus:ring-2
+                                  focus:ring-amber-500 transition">
+                </div>
+
+                <!-- Buttons -->
+                <div class="grid grid-cols-2 gap-4 mt-8">
+
+                    <button type="submit"
+                            class="bg-red-600 text-white font-semibold
+                                   py-3 rounded-lg shadow-lg
+                                   hover:bg-amber-400 hover:scale-105
+                                   transition-all duration-300">
+                        Login
+                    </button>
+
+                    <button type="reset"
+                            class="bg-red-600 text-white font-semibold
+                                   py-3 rounded-lg shadow-lg
+                                   hover:bg-red-500 hover:scale-105
+                                   transition-all duration-300">
+                        Reset
+                    </button>
+                </div>
+
+                <!-- Messages -->
+                {% if messages %}
+                <div class="mt-6 space-y-3">
+                    {% for message in messages %}
+                    <div class="bg-amber-500/20 border border-amber-500/40
+                                text-amber-400 p-4 rounded-lg text-center">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+            </form>
+
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}
