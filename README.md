@@ -123,4 +123,7 @@ Output: Predicted Performance = Good
 ---
 
 ## 👨‍💻 Author
-Dhanush Anumalasetty
+## Dhanush Anumalasetty
+
+- GitHub: https://github.com/dhanushicon12
+- LinkedIn: https://linkedin.com/in/dhanush-anumalasetty-b7b6b12b6
